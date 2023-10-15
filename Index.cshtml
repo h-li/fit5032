@@ -5,6 +5,33 @@
 
 <h2>Upload a File</h2>
 
+<script>
+    // Get the current date and time
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    
+    // Define the greeting messages based on the time of day
+    var greeting;
+    if (hours < 12) {
+        greeting = "Good morning";
+    } else if (hours < 17) {
+        greeting = "Good afternoon";
+    } else if (hours < 20) {
+        greeting = "Good evening";
+    } else {
+        greeting = "Good night";
+    }
+    
+    // Display the greeting message on the webpage
+    var greetingElement = document.getElementById("greeting");
+    greetingElement.innerHTML = greeting;
+</script>
+
+<div>
+    <p id="greeting"></p>
+</div>
+
+
 @using (Html.BeginForm("UploadFile", "FileUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <input type="file" name="file" />
