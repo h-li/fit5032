@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Upload File";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Set the layout as needed
+}
+
+<h2>Upload a File</h2>
+
+@using (Html.BeginForm("UploadFile", "FileUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" />
+    <input type="submit" value="Upload" />
+}
+
+@using (Html.BeginForm("SendEmailWithAttachment", "FileUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+   
+    <input type="submit" value="Send" />
+}
